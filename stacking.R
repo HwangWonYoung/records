@@ -1,3 +1,10 @@
+@ 삼성 SDS Brightics 공모전에 활용한 stacking 코드입니다.
+@ 공장 불량률 예측이 목적이었으며 타겟이 매우 unbalance한 데이터 셋이었습니다.
+@ 이를 위해 타겟 샘플을 여러 비율로 조정해보고, 스태킹을 활용하였습니다.
+@ level 0 model 로는 xgboost, randomforest, knn이 활용되었고 meta learner로는 xgboost, randomforest, lasso regression이 시도되었습니다.
+@ meta learner에 필요한 인풋은 level 0 모델의 예측값이며 정확히 말하면 out of folder에 대한 예측값입니다.
+@ 이 때문에 folder index를 사전에 정하는 작업이 필요하며 cv 실행시 이를 활용하여 oof 예측값을 저장해놓습니다.
+
 # Stacking without sampling / 6 : 1 ratio
 
 # set working directory
